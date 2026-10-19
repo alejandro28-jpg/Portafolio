@@ -1,70 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi portafolio | Alejandro Rojas Morales</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-max-width: 850 px;
-margin: 40 px auto;
-padding: 0 20 px;
-line-height: 1.6;
-color: #202938;
-}
-header, section { margin-bottom: 28 px; }
-h1, h2 { color: #24558a; }
-.proyecto {
-border: 1 px solid #d8dee8;
-border-radius: 8 px;
-padding: 16 px;
-margin: 12 px 0;
-}
-a { color: #155db1; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alejandro Rojas Morales | Portafolio</title>
+  <style>
+    :root {
+      --fondo: #0f172a;
+      --panel: #1e293b;
+      --texto: #e2e8f0;
+      --suave: #94a3b8;
+      --acento: #f59e0b;
+      --linea: #334155;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Verdana, Geneva, sans-serif;
+      background: var(--fondo);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+    a { color: var(--acento); }
+    .pagina {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ---------- Barra lateral ---------- */
+    aside {
+      background: var(--panel);
+      padding: 40px 28px;
+      border-right: 1px solid var(--linea);
+    }
+    aside img {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 3px solid var(--acento);
+    }
+    aside h1 { font-size: 1.5em; line-height: 1.25; margin: 18px 0 6px; }
+    .cargo { color: var(--acento); font-size: 0.95em; margin: 0 0 18px; }
+    .dato { color: var(--suave); font-size: 0.9em; margin: 4px 0; }
+    .enlaces { margin-top: 24px; display: grid; gap: 10px; }
+    .enlaces a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      border: 1px solid var(--acento);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .enlaces a:hover { background: var(--acento); color: var(--fondo); }
+
+    /* ---------- Contenido ---------- */
+    main { padding: 40px 36px; }
+    section { margin-bottom: 44px; }
+    h2 {
+      font-family: "Courier New", monospace;
+      color: var(--acento);
+      font-size: 1.2em;
+      letter-spacing: 1px;
+      margin: 0 0 16px;
+    }
+    h2::before { content: "// "; color: var(--suave); }
+    main p { margin: 0 0 12px; }
+
+    .lista-habilidades { display: grid; gap: 14px; }
+    .habilidad span { display: flex; justify-content: space-between; font-size: 0.9em; }
+    .barra { height: 8px; background: var(--linea); border-radius: 4px; overflow: hidden; }
+    .barra div { height: 100%; background: var(--acento); }
+
+    .proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .proyecto {
+      background: var(--panel);
+      border: 1px solid var(--linea);
+      border-top: 4px solid var(--acento);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .proyecto h3 { margin: 0 0 8px; font-size: 1.05em; }
+    .proyecto p { font-size: 0.92em; color: var(--suave); }
+    .proyecto .herramientas { font-family: "Courier New", monospace; font-size: 0.85em; color: var(--texto); }
+
+    footer { color: var(--suave); font-size: 0.85em; border-top: 1px solid var(--linea); padding-top: 18px; }
+
+    @media (max-width: 760px) {
+      .pagina { grid-template-columns: 1fr; }
+      aside { text-align: center; border-right: none; border-bottom: 1px solid var(--linea); }
+      main { padding: 32px 20px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>Alejandro Rojas Morales</h1>
-<p>Estudiante de ingenieria de sotfware</p>
-<p>Me interesa aprender sobre el desarrollo de software, la ciberseguridad y el analisis de datos.</p>
-<p>
-<a href="https://www.linkedin.com/in/alejandro-rojas-morales-90592736b/">Mi LinkedIn</a> |
-<a href="https://github.com/">Mi GitHub</a>
-</p>
-</header>
-<section>
-<h2>Sobre mí</h2>
-<p>Estoy aprendiendo el lenguaje de python y javascript, tambien ciberseguridad y analisis de datos.
-Me interesa resolver problemas mediante software y
-documentar lo que aprendo.</p>
-</section>
-<section>
-<h2>Proyectos</h2>
-<article class="proyecto">
-<h3>Proyecto 1: Hipocred</h3>
-<p><strong>Objetivo:</strong> Ayudar a los usuarios a comprar su vivienda de la manera mas inteligente financieramente
-    si que se excedan con su capacidad de pago..</p>
-<p><strong>Tecnologías:</strong> html, python, php.</p>
-<p><strong>Aprendizaje:</strong> Aprendi como calcular interes a un largo plazo, como esto puede afectar
-    al pago de la vivienda y a comparar las mejores opciones de financiamiento.</p>
-<a href="https://github.com/USUARIO/REPOSITORIO">
-Ver código fuente
-</a>
-</article>
-<article class="proyecto">
-<h3>Proyecto 2: Juego por niveles</h3>
-<p>Es un juego tipo laverinto donde cada reto te va a dar putnos y dependiento tus puntos vas 
-    vas a poder comprar mejor equipamiento para la batalla final. El juego tiene 
-    5 niveles y en cada uno ganas diferentes puntos y el poder de comprar nuevos items.
-</p>
-</article>
-</section>
-<section>
-<h2>Contacto profesional</h2>
-<p>Consulta mi perfil de LinkedIn para conocer más sobre
-mis intereses y formación.</p>
-</section>
-</body>
-</html>
+  <div class="pagina">
+
+    <!-- BARRA LATERAL -->
+    <aside>
+      <img src="foto.jpg" alt="Foto de Alejandro Rojas Morales">
+      <h1>Alejandro Rojas Morales</h1>
+      <p class="cargo">Estudiante de Ingenieria de sotfware</p>
+      <p class="dato">La salle</p>
+      <p class="dato">Bogota, Colombia</p>
+      <div class="enlaces">
+        <a href="https:https://www.linkedin.com/in/alejandro-rojas-morales-90592736b//">LinkedIn</a>
+        <a href="https://github.com/[USUARIO-GITHUB]">GitHub</a>
+      </div>
+    </aside>
+
+    <!-- CONTENIDO -->
+    <main>
+      <section>
+        <h2>quien_soy</h2>
+        <p>Estudio ingenieria de sofware y me gusta la manera en la que puedo pormover soluciones</p>
+        <p>Estoy aprendiendo python y me interesa las soluciones sociales</p>
+      </section>
+
+      <section>
+        <h2>habilidades</h2>
+        <!-- Cambia el width (%) según qué tan bien manejas cada una -->
+        <div class="lista-habilidades">
+          <div class="habilidad">
+            <span>python fundamentals <em>[Autónomo]</em></span>
+            <div class="barra"><div style="width: 75%"></div></div>
+          </div>
+          <div class="habilidad">
+            <span>Finanzas <em>[Autónomo]</em></span>
+            <div class="barra"><div style="width: 65%"></div></div>
+          </div>
+          <div class="habilidad">
+            <span>Ventas <em>[Aprendiendo]</em></span>
+            <div class="barra"><div style="width: 40%"></div></div>
+          </div>
+          <div class="habilidad">
+            <span>Desarrolo de sotfware <em>[Aprendiendo]</em></span>
+            <div class="barra"><div style="width: 30%"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>proyectos</h2>
+        <div class="proyectos">
+          <article class="proyecto">
+            <h3>Hipocred</h3>
+            <p><strong>Objetivo:</strong> La mejor opcion de credito para vivienda</p>
+            <p><strong>Mi parte:</strong> el fronted</p>
+            <p><strong>Aprendí:</strong> Aprendi html y falta mejorar la interaccion</p>
+            <p class="herramientas">html · css</p>
+            <a href="https://github.com/[USUARIO-GITHUB]/[R
